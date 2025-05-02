@@ -1,28 +1,76 @@
+// eslint.config.js
 import js from '@eslint/js';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import pluginTS from '@typescript-eslint/eslint-plugin';
+import parserTS from '@typescript-eslint/parser';
+import pluginImport from 'eslint-plugin-import';
+import pluginA11y from 'eslint-plugin-jsx-a11y';
+import pluginReact from 'eslint-plugin-react';
 
-export default tseslint.config(
-	{ ignores: ['dist'] },
+export default [
+	js.configs.recommended,
 	{
-		extends: [js.configs.recommended, ...tseslint.configs.recommended],
-		files: ['**/*.{ts,tsx}'],
+		files: ['**/*.{js,jsx,ts,tsx}'],
+		ignores: ['node_modules', 'dist'],
 		languageOptions: {
-			ecmaVersion: 2020,
-			globals: globals.browser
+			parser: parserTS,
+			parserOptions: {
+				ecmaVersion: 2022,
+				sourceType: 'module',
+				ecmaFeatures: {
+					jsx: true
+				}
+			},
+			globals: {
+				console: 'readonly',
+				module: 'readonly',
+				require: 'readonly',
+				process: 'readonly',
+				__dirname: 'readonly',
+				window: 'readonly',
+				document: 'readonly'
+			}
 		},
 		plugins: {
-			'react-hooks': reactHooks,
-			'react-refresh': reactRefresh
+			'@typescript-eslint': pluginTS,
+			import: pluginImport,
+			'jsx-a11y': pluginA11y,
+			react: pluginReact
 		},
 		rules: {
-			...reactHooks.configs.recommended.rules,
-			'react-refresh/only-export-components': [
-				'warn',
-				{ allowConstantExport: true }
-			]
+			'import/order': [
+				'error',
+				{
+					alphabetize: { order: 'asc', caseInsensitive: false },
+					'newlines-between': 'always',
+					groups: [
+						['builtin', 'external'],
+						'internal',
+						['parent', 'sibling', 'index']
+					]
+				}
+			],
+			'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+			'@typescript-eslint/strict-boolean-expressions': 'off',
+			'@typescript-eslint/prefer-nullish-coalescing': 'off',
+			'@typescript-eslint/explicit-function-return-type': 'off',
+			'@typescript-eslint/restrict-template-expressions': 'off',
+			'@typescript-eslint/triple-slash-reference': 'off',
+			'@typescript-eslint/ban-types': 'off',
+			'@typescript-eslint/consistent-type-assertions': 'off',
+			'jsx-a11y/anchor-is-valid': 'off',
+			'react/jsx-uses-react': 'error',
+			'react/jsx-uses-vars': 'error',
+			curly: ['error', 'all'],
+			'no-irregular-whitespace': [
+				'error',
+				{ skipTemplates: true, skipStrings: true }
+			],
+			'no-console': ['error', { allow: ['info', 'error', 'warn'] }]
+		},
+		settings: {
+			react: {
+				version: 'detect'
+			}
 		}
 	}
-);
+];

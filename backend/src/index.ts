@@ -9,6 +9,7 @@ expressApp.use(cors());
 expressApp.get('/ping', (req, res) => {
 	res.send('pong');
 });
+if (true) console.log('Hi');
 
 expressApp.use(
 	'/trpc',
