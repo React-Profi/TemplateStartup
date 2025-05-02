@@ -7,13 +7,14 @@
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
 		"preview": "vite preview",
 		"types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json",
 		"prettify": "prettier --log-level warn --cache --write \"{src/**/*,*}.{ts,tsx,js,json,yml,scss}\" \"!**/{node_modules,dist}/**/*\""
 	},
 	"dependencies": {
-		"@templatesrartup/backend": "workspace:*",
 		"@tanstack/react-query": "^5.74.4",
+		"@templatesrartup/backend": "workspace:*",
 		"@trpc/client": "^11.1.1",
 		"@trpc/react-query": "^11.1.1",
 		"react": "^19.0.0",
@@ -21,7 +22,6 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.22.0",
-		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
 		"@vitejs/plugin-react": "^4.3.4",
