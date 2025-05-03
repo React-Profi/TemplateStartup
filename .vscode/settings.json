@@ -1,5 +1,15 @@
 {
-    "git.ignoreLimitWarning": true,     
-     "eslint.workingDirectories": ["backend", "webapp"]
-      
+	"folders": [{ "path": "webapp" }, { "path": "backend" }],
+	"settings": {
+		"eslint.workingDirectories": [
+			{ "directory": "webapp" },
+			{ "directory": "backend" }
+		],
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true,
+			"source.fixAll.eslint": true
+		},
+		"git.ignoreLimitWarning": true
+	}
 }
