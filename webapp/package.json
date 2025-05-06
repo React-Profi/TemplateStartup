@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
 		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
 		"stylelint": "stylelint --cache --cache-location ./node_modules/.cache/.stylelintcache src/**/*.scss",
+		"stylecheck": "sass --update -q ./src:./node_modules/.cache/.stylecheckcache",
 		"preview": "vite preview",
 		"types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json",
 		"prettify": "prettier --log-level warn --cache --write \"{src/**/*,*}.{ts,tsx,js,json,yml,scss}\" \"!**/{node_modules,dist}/**/*\""
@@ -18,12 +19,15 @@
 		"@templatesrartup/backend": "workspace:*",
 		"@trpc/client": "^11.1.1",
 		"@trpc/react-query": "^11.1.1",
+		"formik": "^2.4.6",
+		"formik-validator-zod": "^2.2.0",
 		"include-media": "^2.0.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.1.0",
 		"react-router-dom": "^7.5.3",
 		"reset-css": "^5.0.2",
-		"sass": "^1.87.0"
+		"sass": "^1.87.0",
+		"zod": "^3.24.4"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.22.0",
