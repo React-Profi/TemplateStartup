@@ -50,6 +50,23 @@ export default [
 				}
 			],
 			'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+			'@typescript-eslint/no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: [
+								'@templatesrartup/backend/**',
+								'!@templatesrartup/backend/**/',
+								'!@templatesrartup/backend/**/input'
+							],
+							allowTypeImports: true,
+							message:
+								'Only types and input schemas are allowed to be imported from backend workspace'
+						}
+					]
+				}
+			],
 			'@typescript-eslint/strict-boolean-expressions': 'off',
 			'@typescript-eslint/prefer-nullish-coalescing': 'off',
 			'@typescript-eslint/explicit-function-return-type': 'off',
