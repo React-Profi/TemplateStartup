@@ -94,6 +94,9 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      superjson:
+        specifier: ^2.2.2
+        version: 2.2.2
       zod:
         specifier: ^3.24.4
         version: 3.24.4
@@ -137,6 +140,9 @@ importers:
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       formik:
         specifier: ^2.4.6
         version: 2.4.6(react@19.1.0)
@@ -161,6 +167,9 @@ importers:
       sass:
         specifier: ^1.87.0
         version: 1.87.0
+      superjson:
+        specifier: ^2.2.2
+        version: 2.2.2
       zod:
         specifier: ^3.24.4
         version: 3.24.4
@@ -3106,6 +3115,13 @@ packages:
       }
     engines: { node: '>=18' }
 
+  copy-anything@3.0.5:
+    resolution:
+      {
+        integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==
+      }
+    engines: { node: '>=12.13' }
+
   core-js-compat@3.42.0:
     resolution:
       {
@@ -3212,6 +3228,12 @@ packages:
         integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
       }
     engines: { node: '>=0.11' }
+
+  date-fns@4.1.0:
+    resolution:
+      {
+        integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==
+      }
 
   debug@3.2.7:
     resolution:
@@ -4537,6 +4559,13 @@ packages:
         integrity: sha512-mfcwb6IzQyOKTs84CQMrOwW4gQcaTOAWJ0zzJCl2WSPDrWk/OzDaImWFH3djXhb24g4eudZfLRozAvPGw4d9hQ==
       }
     engines: { node: '>= 0.4' }
+
+  is-what@4.1.16:
+    resolution:
+      {
+        integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==
+      }
+    engines: { node: '>=12.13' }
 
   isarray@2.0.5:
     resolution:
@@ -5986,6 +6015,13 @@ packages:
       }
     engines: { node: '>=18.12.0' }
     hasBin: true
+
+  superjson@2.2.2:
+    resolution:
+      {
+        integrity: sha512-5JRxVqC8I8NuOUjzBbvVJAKNM8qoVuH0O77h4WInc/qC2q5IreqKxYwgkga3PfA22OayK2ikceb/B26dztPl+Q==
+      }
+    engines: { node: '>=16' }
 
   supports-color@7.2.0:
     resolution:
@@ -8519,6 +8555,10 @@ snapshots:
 
   cookie@1.0.2: {}
 
+  copy-anything@3.0.5:
+    dependencies:
+      is-what: 4.1.16
+
   core-js-compat@3.42.0:
     dependencies:
       browserslist: 4.24.4
@@ -8587,6 +8627,8 @@ snapshots:
   date-fns@2.30.0:
     dependencies:
       '@babel/runtime': 7.27.0
+
+  date-fns@4.1.0: {}
 
   debug@3.2.7:
     dependencies:
@@ -9584,6 +9626,8 @@ snapshots:
       call-bound: 1.0.4
       get-intrinsic: 1.3.0
 
+  is-what@4.1.16: {}
+
   isarray@2.0.5: {}
 
   isexe@2.0.0: {}
@@ -10475,6 +10519,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  superjson@2.2.2:
+    dependencies:
+      copy-anything: 3.0.5
 
   supports-color@7.2.0:
     dependencies:
