@@ -19,7 +19,7 @@
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"inlineSources": true,
-		"lib": ["ES2021"],
+		"lib": ["ES2021", "DOM", "DOM.Iterable"],
 		"baseUrl": "./src",
 		"paths": {
 			"@/*": ["*"]
